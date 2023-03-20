@@ -57,11 +57,11 @@ function clearItems() {
 }
 
 function editItems(index) {
-    document.getElementById("name").value = user_data.name(index);
-    document.getElementById("city").value = user_data.city(index);
-    document.getElementById("fees").value = user_data.fees(index);
-    displayData();
-    html_statistics();
+    // document.getElementById("name").value = user_data.name(index);
+    // document.getElementById("city").value = user_data.city(index);
+    // document.getElementById("fees").value = user_data.fees(index);
+    // displayData();
+    // html_statistics();
 }
 
 function removeItems(index) {
@@ -74,16 +74,16 @@ function removeItems(index) {
 
 function html_statistics() {
     let htmlData = "";
-    htmlData += '1. Total fees: <label id="sum">' +user_data.reduce((total, num) =>  total + num.fees, 0)+'</label><br>'
-    // htmlData += '2. Total number of students:<label id="total_students">'+user_data.length+'</label><br>'
-    // htmlData += '3. Number of students whose name starts from "R":<label id="withR">'+user_data.filter(nameWithR => nameWithR.name.startsWith("R")).length+'</label> <br>'
-    htmlData += '4. City name of 4th sudent:<label id="student4">' + user_data.length >= 2 ? user_data[3].city : "Not Found" + '</label> <br>'
-    htmlData += '5. Total fees of 3rd and 5th student:<label id="feesOf2">' + user_data.length >= 5 ? user_data.fees[2] + user_data.fees[4] : user_data.length >= 3 ? user_data.fees[2] : "Not Found" + '</label> <br>'
-    // htmlData += '6. Number of students whose fees is in between $2000 and $3900:<label id="feesBtw">'+user_data.reduce((count, std) => 2000 < std.fees && std.fees < 3900 ? count+1 : count, 0)+'</label> <br>'
-    // htmlData += '7. Number of students whose fees is <$1000:<label id="feesLess">'+user_data.reduce((count, std) => std.fees < 1000 ? count+1 : count, 0)+'</label> <br>'
-    // htmlData += '8. Number of students whose name starts from "S" AND City name starts from "Ch":<label id="nameAndCity">'+user_data.filter(NameANDCity => NameANDCity.name.startsWith("S") && NameANDCity.city.startsWith("Ch")).length+'</label><br>'
-    // htmlData += '9. Number of students whose name starts from "J" OR City name starts from "H":<label id="nameOrCity">'+user_data.filter(NameORCity => NameORCity.name.startsWith("J") || NameORCity.city.startsWith("H")).length+'</label> <br>'
-    // htmlData += '10. Find the Min and Max Fees:<label id="minMax">'+Math.max(user_data.fees)+'</label>'
+    htmlData += '1. Total fees: <label>' +user_data.reduce((total, num) =>  total + num.fees, 0)+'</label><br>'
+    htmlData += '2. Total number of students:<label>'+user_data.length+'</label><br>'
+    htmlData += '3. Number of students whose name starts from "R":<label>'+user_data.filter(nameWithR => nameWithR.name.startsWith("R")).length+'</label> <br>'
+    htmlData += '4. City name of 4th sudent:<label>' + user_data.length >= 3 ? user_data[3].city : "Not Found" + '</label> <br>'
+    htmlData += '5. Total fees of 3rd and 5th student:<label>' + user_data.length >= 5 ? user_data.fees[2] + user_data.fees[4] : user_data.length >= 3 ? user_data.fees[2] : "Not Found" + '</label> <br>'
+    htmlData += '6. Number of students whose fees is in between $2000 and $3900:<label>'+user_data.reduce((count, std) => 2000 < std.fees && std.fees < 3900 ? count+1 : count, 0)+'</label> <br>'
+    htmlData += '7. Number of students whose fees is <$1000:<label>'+user_data.reduce((count, std) => std.fees < 1000 ? count+1 : count, 0)+'</label> <br>'
+    htmlData += '8. Number of students whose name starts from "S" AND City name starts from "Ch":<label>'+user_data.filter(NameANDCity => NameANDCity.name.startsWith("S") && NameANDCity.city.startsWith("Ch")).length+'</label><br>'
+    htmlData += '9. Number of students whose name starts from "J" OR City name starts from "H":<label>'+user_data.filter(NameORCity => NameORCity.name.startsWith("J") || NameORCity.city.startsWith("H")).length+'</label> <br>'
+    // htmlData += '10. Find the Min and Max Fees:<label>'+Math.max(user_data.fees)+'</label>'
     let xyz = document.getElementById("statistcs")
     xyz.innerHTML = htmlData;
 }
